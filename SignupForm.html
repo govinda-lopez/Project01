@@ -7,14 +7,34 @@
 </head>
 <body>
     <form action="signup.asp" method="post">
-        Name: <input type="text" name="username">
+        <!-- Tip: Always use the <label> tag to define labels for <input type="text">, <input type="checkbox">, <input type="radio">, <input type="file">, and <input type="password">. -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" class="form-control" name="username" value="" required pattern="[a-zA-Z]{1.}">        
         <br /> <br /> 
-        Password: <input type="password" name="password">
+        <label for="password"> Password:</label>
+        <input type="password" name="password" minlength="6" maxlength="12">
         <br /> <br /> 
-        DOB: <input type="date" name="dob">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required placeholder="youremail@domain.com">
         <br /> <br /> 
+        <label for="dob">DOB: </label>
+        <input type="date" name="dob">
+        <br /> <br /> 
+        Gender: 
+            <label for="gender">Male:</label>    
+            <input type="radio" name="gender" value="male" checked="true">
+            <label for="gender">Female:</label>
+            <input type="radio" name="gender" value="femaale">
+        <br /> <br />
+        <label for="age">Age:</label>
+        <input type="number" required min="12">
+        <br /> <br />
+        <input type="checkbox" name="accept-terms" value="accepted"> Accept Terms and Conditions
+        <input type="checkbox" name="accept-terms" value="not-a-robot"> Not a Robot 
+        <br /> <br />
         <button type="submit" name="submit">Submit</button>
         <button type="reset" name="reset">Reset</button>
+        <input type="reset" value="Reset">
     </form>
     </form>
 </body>
